@@ -18,9 +18,9 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <input type="date" value={this.state.startDate} onChange={this.handleChange}>
+        <input type="date" name="start" value={this.state.startDate} onChange={this.handleChange}>
         </input>
-        <input type="date" value={this.state.endDate}>
+        <input type="date" name="end" value={this.state.endDate}>
         </input>
         <button >Result</button>
       </div>
