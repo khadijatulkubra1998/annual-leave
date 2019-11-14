@@ -4,24 +4,31 @@ export class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      newDate: new Date(),
-      startDate: new Date().getDate(),
-      endDate: new Date().getDate(),
+      newDate: "",
+      startDate: "",
+      endDate: "",
     }
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChangeStart = this.handleChangeStart.bind(this)
+    this.handleChangeEnd = this.handleChangeEnd.bind(this)
   }
-  handleChange(event) {
-    this.setState({ value: event.target.startDate });
-    this.setState({ value: event.target.endDate });
+  handleChangeStart(event) {
+    this.setState({ startDate: event.target.startDate });
+
   }
- 
+  handleChangeEnd(event) {
+    this.setState({ endDate: event.target.endDate });
+  }
   render() {
+    console.log (this.state.startDate);
+    console.log (this.state.endDate);
     return (
       <div>
-        <input type="date" name="start" >
+        {/* <input type="date" name="start" onChange={this.handleChangeStart}>
         </input>
-        <input type="date" name="end">
-        </input>
+        <input type="date" name="end" onChange={this.handleChangeEnd}>
+        </input> */}
+        <input type="date" onChange={(event) => this.setState({startDate: event.target.value})}/>
+
         <button >Result</button>
       </div>
     );
