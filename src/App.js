@@ -8,16 +8,18 @@ export class App extends Component {
       startDate: "",
       endDate: "",
     }
-    this.handleChangeStart = this.handleChangeStart.bind(this)
-    this.handleChangeEnd = this.handleChangeEnd.bind(this)
+    // this.handleChangeStart = this.handleChangeStart.bind(this)
+    // this.handleChangeEnd = this.handleChangeEnd.bind(this)
   }
-  handleChangeStart(event) {
-    this.setState({ startDate: event.target.startDate });
+  // handleChangeStart(event) {
+  //   this.setState({ startDate: event.target.startDate });
 
-  }
-  handleChangeEnd(event) {
-    this.setState({ endDate: event.target.endDate });
-  }
+  // }
+  // handleChangeEnd(event) {
+  //   this.setState({ endDate: event.target.endDate });
+  // }
+  
+
   render() {
     console.log (this.state.startDate);
     console.log (this.state.endDate);
@@ -28,7 +30,7 @@ export class App extends Component {
         <input type="date" name="end" onChange={this.handleChangeEnd}>
         </input> */}
         <input type="date" onChange={(event) => this.setState({startDate: event.target.value})}/>
-
+        <input type="date" onChange={(event) => this.setState({endDate: event.target.value})}/>
         <button >Result</button>
       </div>
     );
