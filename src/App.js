@@ -30,7 +30,6 @@ export class App extends Component {
         remaning = this.state.total
       }
     )
-    return remaning;
   }
 
   render() {
@@ -42,8 +41,8 @@ export class App extends Component {
         </input>
         <input type="date" name="end" onChange={this.handleChangeEnd}>
         </input> */}
-        <input type="date" onChange={(event) => this.setState({ startDate: event.target.value })} />
-        <input type="date" onChange={(event) => this.setState({ endDate: event.target.value })} />
+        <input type="date" onChange={(event) => this.setState({ startDate: new Date(event.target.value).getDate()})} />
+        <input type="date" onChange={(event) => this.setState({ endDate: new Date(event.target.value).getDate() })} />
 
         <button onClick{calculate()}>Result</button>
         <h1>Remaning Leave <span>{this.state.remaining}</span></h1>
