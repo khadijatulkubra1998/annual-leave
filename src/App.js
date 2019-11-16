@@ -23,11 +23,11 @@ export class App extends Component {
       {
         startD = this.state.startDate,
         endD = this.state.endDate,
-        sub = startD - endD,
-        divide = sub / 11,
-        multi = divide * 11,
-        total = sub - multi,
-        remaning = total
+        sub = this.state.startD - this.state.endD,
+        divide = this.state.sub / 11,
+        multi = this.state.divide * 11,
+        total = this.state.sub - multi,
+        remaning = this.state.total
       }
     )
     return remaning;
@@ -46,7 +46,7 @@ export class App extends Component {
         <input type="date" onChange={(event) => this.setState({ endDate: event.target.value })} />
 
         <button >Result</button>
-        <h1>Remaning Leave <span>0</span></h1>
+        <h1>Remaning Leave <span>{this.state.remaining}</span></h1>
       </div>
     );
   }
