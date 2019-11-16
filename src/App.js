@@ -45,7 +45,7 @@ export class App extends Component {
         <input type="date" onChange={(event) => this.setState({ startDate: event.target.value })} />
         <input type="date" onChange={(event) => this.setState({ endDate: event.target.value })} />
 
-        <button >Result</button>
+        <button onClick{calculate()}>Result</button>
         <h1>Remaning Leave <span>{this.state.remaining}</span></h1>
       </div>
     );
