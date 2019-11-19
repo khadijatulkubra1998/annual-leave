@@ -1,5 +1,15 @@
+body{
+  background-image: url("./background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5em;
 }
 
 .App-logo {
@@ -19,4 +29,25 @@
 
 .App-link {
   color: #09d3ac;
+}
+input {
+  margin: 1em;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+label{
+  margin: 1em;
+  color: #000;
+}
+button {
+  margin-top: 1em;
+}
+h1 {
+  margin: 1em;
+  font-size: 70px;
+  background-color:#B43232;
+  color: white;
+  border: 1px solid #B43232;
+  padding: 1em;
 }
