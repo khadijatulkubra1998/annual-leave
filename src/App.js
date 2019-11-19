@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-
+var moment = require('moment');
+moment().format();
 export class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       startDate: "",
       endDate: "",
-      startD:"",
-      endD:"",
-      sub:"",
-      divide:"",
-      multi:"",
-      total:"",
-      remaining:""
+      startD: "",
+      endD: "",
+      sub: "",
+      divide: "",
+      multi: "",
+      total: "",
+      remaining: ""
     }
     // this.handleChangeStart = this.handleChangeStart.bind(this)
     // this.handleChangeEnd = this.handleChangeEnd.bind(this)
@@ -24,17 +25,23 @@ export class App extends Component {
   // handleChangeEnd(event) {
   //   this.setState({ endDate: event.target.endDate });
   calculate() {
+    let endD = moment(this.state.endDate); //todays date
+    let startD = moment(this.state.startDate); // another date
+    let duration = moment.duration(endD.diff(startD));
+    let days = duration.asDays();
+    let divide = days / 11;
+    let multi = divide * 11;
+    let total = days - multi
     this.setState(
       {
-        startD : this.state.startDate,
-        endD : this.state.endDate,
-        sub : this.state.startD - this.state.endD,
-        divide : this.state.sub / 11,
-        multi : this.state.divide * 11,
-        total : this.state.sub - this.state.multi,
-        remaning : this.state.total
+        remaining: total
+      }, () => {
+        console.log(days);
+        console.log(divide);
+        console.log(multi);
+        console.log(total);
+        console.log(this.state.remaining)
       }
-      // console.log(remaining);
     )
   }
 
@@ -43,11 +50,11 @@ export class App extends Component {
     console.log(this.state.endDate);
     return (
       <div>
-       
-        <input type="date" onChange={(event) => this.setState({ startDate: new Date(event.target.value).getDate()})} />
-        <input type="date" onChange={(event) => this.setState({ endDate: new Date(event.target.value).getDate() })} />
 
-        <button onClick={this.calculate()}>Result </button>
+        <input type="date" onChange={(event) => this.setState({ startDate: event.target.value })} />
+        <input type="date" onChange={(event) => this.setState({ endDate: event.target.value })} />
+
+        <button onClick={() => this.calculate()}>Result </button>
         <h1>Remaning Leave <span>{this.state.remaining}</span></h1>
       </div>
     );
