@@ -48,21 +48,19 @@ export class App extends Component {
       }
     )
   }
- 
   render() {
     // console.log(this.state.startDate);
     // console.log(this.state.endDate);
     
     return (
       <div className="App">
-          <h1 >Remaning Leave <span>"{this.state.remaining}"</span></h1>
+          <h1 >Remaining Leave <span>"{this.state.remaining}"</span></h1>
         <label  className="btn btn-secondary">Start Date</label>
         <input type="date" className="btn btn-outline-danger" onChange={(event) => this.setState({ startDate: event.target.value })} />
         <label className="btn btn-secondary"> End Date </label>
         <input type="date"  className="btn btn-outline-danger"  onChange={(event) => this.setState({ endDate: event.target.value })} />
         <Button variant="outline-info" onClick={() => this.calculate()}>Result</Button>
-        
-      
+       
       </div>
     );
   }
