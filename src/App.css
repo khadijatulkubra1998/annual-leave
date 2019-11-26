@@ -1,8 +1,10 @@
+@import '~antd/dist/antd.css';
+
 body{
   background-image: url("./background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 95vh;
+  height: 90vh;
   background-position: center;
 }
 .App {
@@ -11,7 +13,7 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 5em 14em;
+  margin: 3em 14em;
   flex-wrap: wrap;
   border: 1px solid black;
    border-radius: 15px;
@@ -27,13 +29,13 @@ body{
 
 
 
-input {
+/* input {
   margin: 1em;
   border-top: none;
   border-right: none;
   border-left: none;
   padding: 50px;
-}
+} */
 label{
   margin: 1em;
   color: #000;
