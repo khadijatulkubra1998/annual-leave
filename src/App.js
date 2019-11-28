@@ -28,8 +28,8 @@ export class App extends Component {
       let startD = moment(this.state.startDate); // another date
       let duration = moment.duration(endD.diff(startD));
       let days = duration.asDays();
-      let divide = parseInt(days / 11);
-      let multi = parseInt(divide * 11);
+      let divide = Math.round(days / 11);
+      let multi = Math.round(divide * 11);
       let total = days - multi
       this.setState(
         {
@@ -46,58 +46,13 @@ export class App extends Component {
 
 
 
-  
-//   constructor(props) {
-//     super(props)
-//     this.state = {
-//       startDate: "",
-//       endDate: "",
-//       startD: "",
-//       endD: "",
-//       sub: "",
-//       divide: "",
-//       multi: "",
-//       total: "",
-//       remaining: ""
-//     }
-//     // this.handleChangeStart = this.handleChangeStart.bind(this)
-//     // this.handleChangeEnd = this.handleChangeEnd.bind(this)
-//   }
-//   // handleChangeStart(event) {
-//   //   this.setState({ startDate: event.target.startDate });
-
-//   // }
-//   // handleChangeEnd(event) {
-//   //   this.setState({ endDate: event.target.endDate });
-//   calculate() {
-//     let endD = moment(this.state.endDate); //todays date
-//     let startD = moment(this.state.startDate); // another date
-//     let duration = moment.duration(endD.diff(startD));
-//     let days = duration.asDays();
-//     let divide = parseInt(days / 11);
-//     let multi = parseInt(divide * 11);
-//     let total = days - multi
-//     this.setState(
-//       {
-//         remaining: total
-//       }, () => {
-//         console.log(days);
-//         console.log(divide);
-//         console.log(multi);
-//         console.log(total);
-//         console.log(this.state.remaining)
-//       }
-//     )
-//   }
-
-
   render() {
     console.log(this.state.startDate);
     console.log(this.state.endDate);
     
     return (
       <div className="App">
-          <h1 >Remaining Leave <span>"{this.state.remaining}"</span></h1>
+          <h1 >Remaining Leave <span>"{Math.round(this.state.remaining)}"</span></h1>
         <label  className="btn btn-info">Start Date</label>
         <DatePicker onChange={(date) => this.setState({startDate: date})}  placeholder="Select date" />
         {/* <input type="date" className="btn btn-outline-light" onChange={(event) => this.setState({ startDate: event.target.value })} /> */}
