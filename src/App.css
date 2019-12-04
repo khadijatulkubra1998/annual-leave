@@ -7,6 +7,10 @@ body{
   height: 90vh;
   background-position: center;
 }
+.App p {
+  color: white;
+  font-size: large;
+}
 .App {
   text-align: center;
   display: flex;
