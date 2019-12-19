@@ -2,10 +2,9 @@
 
 body{
   background-image: url("./background.jpg");
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: cover;
   height: 90vh;
-  background-position: center;
 }
 .App p {
   color: white;
@@ -17,10 +16,10 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 3em 14em;
+  margin: 3em 10em;
   flex-wrap: wrap;
   border: 1px solid black;
-   border-radius: 15px;
+  border-radius: 15px;
   padding: 2em;
   /* margin-left: 15em;
   margin-right: 15em; */
@@ -65,8 +64,13 @@ button {
   -webkit-box-shadow: -1px 1px 11px 0px rgba(247,247,247,1);
   -moz-box-shadow: -1px 1px 11px 0px rgba(247,247,247,1);
   box-shadow: -1px 1px 11px 0px rgba(247,247,247,1);
-  font-family: 'Lobster', cursive;
+  font-family: 'Calistoga', cursive;
+  letter-spacing: 0;
   text-shadow: 2px 2px 2px #020101;
+}
+p{
+  font-family: 'Kalam', cursive;
+  font-size: 30px;
 }
 @media screen and (max-width: 800px) {
   .App{
@@ -86,3 +90,4 @@ button {
     font-size: 10px;
   }
 }
+
